@@ -1,4 +1,22 @@
-
-I like talk radio
+<<<<<<< HEAD
+I like chocolate biscuits
 I like snow
-I like biscuits
+I like books
+I like very much cats
+I like fiction
+I don't like coke
+I like sushi
+=======
+I like tea
+I like snow
+I like game
+I like cats
+I like fiction
+>>>>>>> leilei
+I like music
+I like rabbit
+I like homework
+I like eggplant
+I like moom
+I like stars
+I like water
