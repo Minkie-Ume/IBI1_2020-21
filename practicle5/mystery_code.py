@@ -15,7 +15,9 @@ p=False
 while p==False:
 	p = True
 	n = randint(1,100)
+	# get a random number n
 	if n > 50:
 		p = False
+		#to get a loop, if n>50, return
 
 print(n)
