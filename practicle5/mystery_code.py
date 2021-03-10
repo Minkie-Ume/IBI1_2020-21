@@ -1,5 +1,5 @@
 # What does this piece of code do?
-# Answer: 
+# Answer: to get a random number n in range (1,50) from range (1,100)
 
 # Import libraries
 # randint allows drawing a random number, 
