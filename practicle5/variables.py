@@ -7,4 +7,7 @@ X = True
 Y = False
 z = (X and not Y) or (Y and not X)
 w = X !=Y
-
+print(d)
+print(e)
+print(z)
+print(w)
