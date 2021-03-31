@@ -20,9 +20,46 @@ for i in range (0,7996):
 
 covid_data.loc[row,"total_cases"]
 
-a =covid_data.loc[:,"new_cases"]#defining a new list 
-np.mean(a)
-np.median(a)
-#finding the mean of new cases in the world is 194.546773, the median is 0.0
+new=[]
+for i in range (0,7996):
+	if covid_data.loc[i,"location"]=="World":
+		new.append(True)
+	else:
+		new.append(False)
 
+covid_data.loc[new,"new_cases"]#seperate world's data from the file.
+
+np.mean(covid_data.loc[new,"new_cases"])
+#calculate the mean of the data is 8454.326086956522
+np.median(covid_data.loc[new,"new_cases"])
+#calculate the median of the data is 2023.5
+
+world_new_cases= covid_data.loc[new,"new_cases"]#get the range of data
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.boxplot(world_new_cases)
+plt.show()
+
+world_new_cases= covid_data.loc[new,"new_cases"]
+world_new_deaths= covid_data.loc[new,"new_deaths"]
+world_dates= covid_data.loc[new,"date"]
+#create x-axis and y-axis
+plt.plot(world_dates, world_new_cases,'b+')
+plt.plot(world_dates, world_new_deaths,'b+')
+plt.xticks(world_dates.iloc[0:len(world_dates):4],rotation=-90)
+#making the figure better
+#create figure
+plt.show()
+
+date=[]#creat a new list for boolean.
+for i in range (0,7996):
+        if covid_data.loc[i,"date"]=="2020-03-14":
+                date.append(True)
+        else:
+                date.append(False)#giving boolean to the list
+
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.boxplot(covid_data.loc[date,"total_cases"])
+plt.show()
 
