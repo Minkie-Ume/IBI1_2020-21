@@ -19,4 +19,10 @@ for i in range (0,7996):
 		row.append(False)#giving boolean to the list
 
 covid_data.loc[row,"total_cases"]
- 
+
+a =covid_data.loc[:,"new_cases"]#defining a new list 
+np.mean(a)
+np.median(a)
+#finding the mean of new cases in the world is 194.546773, the median is 0.0
+
+
