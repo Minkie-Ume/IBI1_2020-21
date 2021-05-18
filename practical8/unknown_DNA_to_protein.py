@@ -1,28 +1,11 @@
 import os
 import re
 os.chdir("/Users/minkie/IBI1_2020-21/practical8")
-file = open("Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa")
+file = open("unknown_function.fa")
 gene = file.readlines()
 output = []
 content=''
-for i in range (len(gene)):
-	if gene[i].startswith(">") and re.search(r'unknown function',gene[i]):
-		name = re.findall(r'^>.+?_',gene[i])
-		output.append(name)
-		a =''
-		for n in range (len(gene[i:-1])):
-			if gene[i+n+1].startswith('>'):
-				break
-			else:
-				a=a+gene[i+n+1][:-1]
-		content='             '+ str(len(a)) + '\n'
-		output.append(content)
-		b=a.rstrip('\n')
-		condons=[]
-		for i in range(0, len(b), 3):
-			c=b[i:i+3]
-			condons.append(c)
-		table = {
+table = {
         'ATA':'I', 'ATC':'I', 'ATT':'I', 'ATG':'M',
         'ACA':'T', 'ACC':'T', 'ACG':'T', 'ACT':'T',
         'AAC':'N', 'AAT':'N', 'AAA':'K', 'AAG':'K',
@@ -41,13 +24,18 @@ for i in range (len(gene)):
         'TGC':'C', 'TGT':'C', 'TGA':'_', 'TGG':'W',
     }
 
-		d=''
-		for x in range (len(condons)):
-			m=condons[i]
-			n=table[m]
-			d=d+n
-		sequence=d+"\n"
-		output.append(sequence)
+for i in range (len(gene)):
+	if gene[i].startswith('>'):
+		output.append(gene[i].split(' ')[0]) # get the sequence
+	else:
+		sequence = gene[i].replace('\n', '') 
+		condons=[]
+		protein=''
+		for e in range( 0,len(sequence),3):
+			a=sequence[e:e+3]
+			protein + = table[a]
+		content="    "+str(len(protein))+ "\n"+protein+'\n'
+		output.append(content)
 
 fout=open('new_file.fa',"w")
 fout.write(" ".join('%s' %a for a in output))
