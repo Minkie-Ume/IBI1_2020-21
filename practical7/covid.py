@@ -81,7 +81,7 @@ China_total_cases=covid_data.loc[CHN,"total_cases"]
 China_death_cases=covid_data.loc[CHN,"deaths_cases"]
 China_dates=covid_data.loc[CHN,"date"]
 plt.plot(China_dates, China_total_cases,'b+')
-plt.plot(China_dates, China_death_cases,'b+')
+plt.plot(China_dates, China_death_cases,'r+')
 plt.xticks(China_dates.iloc[0:len(China_dates):4],rotation=-90)
 plt.xlabel('dates')
 plt.ylabel('cases')
