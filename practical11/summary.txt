@@ -1,4 +1,15 @@
 finding:
+comparision between human and mouse: percentage: 89.64%, alignment score: 1091
+comparision between human and random sequence: percentage: 5.41%, alignment score: -250
+comparision between mouse and random sequence : percentage: 5.86%, alignment score: -250
 
 interperation:
+about human sequence and mouse sequence: the higher alignment score and percentage are, the more similar two sequence are.
+from the data we can see that the aligment score is very high (about 1000),indicating that there are many similar amino acid.
+The high level percentage verifys that these two sequence are very similar.
+Meanwhile, the data of comparision between human and random sequence and between mouse and random sequence are very similar,
+these comfirm that human and mouse sequence are similar as well.
 
+the high similarity may predict that human and mouse may have the same ancestor. Though human and mouse look quite different,
+they still have many similarity. For example, both of them are mammals. therefore, the existence of a homologous ancestor is
+reasonable. To make a further study to check the hypothesis, more sequence sample should be compared. 
