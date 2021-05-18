@@ -1,10 +1,12 @@
-table={'A':'T','T':'A','C':'G','G':'C','a'='t','t'='a','c'='g','g'='c'}#create a dictionary
-G1="ACTTTACGGAT"#G1 is the specified DNA sequence
-G2=""#use to demonstrate the reverse DNA sequence
+#create a dictionary
+table = {'A':'T','T':'A','C':'G','G':'C','a':'t','t':'a','g':'c','c':'g'}
 def reverse_gene(G1):#define a function to get reverse DNA sequence
-	a = G1[i-1]
-	b = table[a]
-	G2 = G2+b
+	reverse_sequence=''
+	for i in G1:
+		a = i
+		b = table[i]
+		reverse_sequence += b
+	return reverse_sequence[::-1]
 
-print(G2)
+reverse_gene("ACTTTACGGAT")#G1 is the specified DNA sequence
 
