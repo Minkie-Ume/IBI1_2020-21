@@ -58,7 +58,7 @@ world_new_deaths= covid_data.loc[new,"new_deaths"]
 world_dates= covid_data.loc[new,"date"]
 #create x-axis and y-axis
 plt.plot(world_dates, world_new_cases,'b+')
-plt.plot(world_dates, world_new_deaths,'b+')
+plt.plot(world_dates, world_new_deaths,'r+')
 plt.xticks(world_dates.iloc[0:len(world_dates):4],rotation=-90)
 #makes the x-axis looks better
 plt.xlabel('dates')
