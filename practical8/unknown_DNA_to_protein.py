@@ -6,24 +6,22 @@ gene = file.readlines()#open and read file
 output = []
 content=''
 #set a condons' dictionary
-table = {
-        'ATA':'I', 'ATC':'I', 'ATT':'I', 'ATG':'M',
-        'ACA':'T', 'ACC':'T', 'ACG':'T', 'ACT':'T',
-        'AAC':'N', 'AAT':'N', 'AAA':'K', 'AAG':'K',
-        'AGC':'S', 'AGT':'S', 'AGA':'R', 'AGG':'R',
-        'CTA':'L', 'CTC':'L', 'CTG':'L', 'CTT':'L',
-        'CCA':'P', 'CCC':'P', 'CCG':'P', 'CCT':'P',
-        'CAC':'H', 'CAT':'H', 'CAA':'Q', 'CAG':'Q',
-        'CGA':'R', 'CGC':'R', 'CGG':'R', 'CGT':'R',
-        'GTA':'V', 'GTC':'V', 'GTG':'V', 'GTT':'V',
-        'GCA':'A', 'GCC':'A', 'GCG':'A', 'GCT':'A',
-        'GAC':'D', 'GAT':'D', 'GAA':'E', 'GAG':'E',
-        'GGA':'G', 'GGC':'G', 'GGG':'G', 'GGT':'G',
-        'TCA':'S', 'TCC':'S', 'TCG':'S', 'TCT':'S',
-        'TTC':'F', 'TTT':'F', 'TTA':'L', 'TTG':'L',
-        'TAC':'Y', 'TAT':'Y', 'TAA':'_', 'TAG':'_',
-        'TGC':'C', 'TGT':'C', 'TGA':'_', 'TGG':'W',
-    }
+genetic_code = {'TTT':'F', 'TTC':'F', 'TTA':'L', 'TTG':'L',
+'TCT':'S', 'TCC':'S', 'TCA':'S', 'TCG':'S',
+'TAT':'Y', 'TAC':'Y', 'TAA':'O', 'TAG':'U',
+'TGT':'C', 'TGC':'C', 'TGA':'X', 'TGG':'W',
+'CTT':'L', 'CTC':'L', 'CTA':'L', 'CTG':'L',
+'CCT':'P', 'CCC':'P', 'CCA':'P', 'CCG':'P',
+'CAT':'H', 'CAC':'H', 'CAA':'Q', 'CAG':'Z',
+'CGT':'R', 'CGC':'R', 'CGA':'R', 'CGG':'R',
+'ATT':'I', 'ATC':'I', 'ATA':'J', 'ATG':'M',
+'ACT':'T', 'ACC':'T', 'ACA':'T', 'ACG':'T',
+'AAT':'N', 'AAC':'B', 'AAA':'K', 'AAG':'K',
+'AGT':'S', 'AGC':'S', 'AGA':'R', 'AGG':'R',
+'GTT':'V', 'GTC':'V', 'GTA':'V', 'GTG':'V',
+'GCT':'A', 'GCC':'A', 'GCA':'A', 'GCG':'A',
+'GAT':'D', 'GAC':'D', 'GAA':'E', 'GAG':'E',
+'GGT':'G', 'GGC':'G', 'GGA':'G', 'GGG':'G'}
 
 for i in range (len(gene)):
 	if gene[i].startswith('>'):
@@ -32,9 +30,11 @@ for i in range (len(gene)):
 		sequence = gene[i].replace('\n', '') #get the DNA sequence
 		condons=[]
 		protein=''
-		for e in range( 0,len(sequence),3):#get the condon and amino acid
-			a=sequence[e:e+3]
-			protein + = table[a]
+	for e in range( 0,len(sequence),3):#get the condon and amino acid
+		a=sequence[i:i+3]
+		condons.append(a)
+	for x in range(len(condons)):
+		protein + = genetic_code[condons[x]]
 		content="    "+str(len(protein))+ "\n"+protein+'\n'
 		output.append(content)
 
