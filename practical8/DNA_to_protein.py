@@ -30,7 +30,7 @@ c=''
 for i in range (len(condons)):
 	m = condons[i]
 	n = table[m]
-	if m=='_':
+	if n=='_':
 		break
 	else:
 		c = c+n 
