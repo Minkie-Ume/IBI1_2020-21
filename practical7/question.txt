@@ -3,7 +3,7 @@ question:How do the total number of cases in China change in dates?
 from line 70
 
 Result:
-A plot was made to see the rend of total cases' change.
+A plot was made to see the trend of total cases' change.
 The plot shows that during Januanry 20th and February 25th, the total cases in China increased rapidly, meanwhile, the growth of cases was very slow at the beginning of January and the end of Feburary.
 Why the growth rate of cases in slow at the start of Juanary might due to the small amount of inffected individuals, the number of inffecters are small so the inffected rate wouldn't be very high. As 
 the number of inffecters increased, the capability of inffection also got strengthened, so during Januanry 20th and February 25th the cases number sharply increased. At the end of Feburary, the 
