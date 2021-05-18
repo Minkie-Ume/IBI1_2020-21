@@ -11,4 +11,4 @@ for i in range(1,14):
 	b = c
 #get new a&b's value
 #move on the code
-print(c)
+
