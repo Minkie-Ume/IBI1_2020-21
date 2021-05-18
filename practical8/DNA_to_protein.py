@@ -1,7 +1,7 @@
 seq = "ATGCGACTACGATCGAGGGCC"#gives the gene
 condons=[]# create a list
 for i in range(0, len(seq), 3):
-	a=seq[i:i+3])
+	a=seq[i:i+3]
 	condons.append(a)#divide to seq in 3 to get the condons list
 
 #finding that the target condons are:ATG\CGA\CTA\CGA\TCG\AGG\GCC
@@ -28,9 +28,12 @@ table = {
 
 c=''
 for i in range (len(condons)):
-	m = condons[i-1]
-	n = table[a]
-	c = c+n 
+	m = condons[i]
+	n = table[m]
+	if m=='_':
+		break
+	else:
+		c = c+n 
 #get the amino acid.
 
 print(c)
