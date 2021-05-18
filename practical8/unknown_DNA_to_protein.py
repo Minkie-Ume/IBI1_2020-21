@@ -2,9 +2,10 @@ import os
 import re
 os.chdir("/Users/minkie/IBI1_2020-21/practical8")
 file = open("unknown_function.fa")
-gene = file.readlines()
+gene = file.readlines()#open and read file
 output = []
 content=''
+#set a condons' dictionary
 table = {
         'ATA':'I', 'ATC':'I', 'ATT':'I', 'ATG':'M',
         'ACA':'T', 'ACC':'T', 'ACG':'T', 'ACT':'T',
@@ -26,17 +27,18 @@ table = {
 
 for i in range (len(gene)):
 	if gene[i].startswith('>'):
-		output.append(gene[i].split(' ')[0]) # get the sequence
+		output.append(gene[i].split(' ')[0]) # get the ID
 	else:
-		sequence = gene[i].replace('\n', '') 
+		sequence = gene[i].replace('\n', '') #get the DNA sequence
 		condons=[]
 		protein=''
-		for e in range( 0,len(sequence),3):
+		for e in range( 0,len(sequence),3):#get the condon and amino acid
 			a=sequence[e:e+3]
 			protein + = table[a]
 		content="    "+str(len(protein))+ "\n"+protein+'\n'
 		output.append(content)
 
+#set the new fasta file.
 fout=open('new_file.fa',"w")
 fout.write(" ".join('%s' %a for a in output))
 fout.close()
