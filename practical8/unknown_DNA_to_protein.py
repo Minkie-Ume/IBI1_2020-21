@@ -34,8 +34,8 @@ for i in range (len(gene)):
 		a=sequence[i:i+3]
 		condons.append(a)
 	for x in range(len(condons)):
-		protein + = genetic_code[condons[x]]
-		content="    "+str(len(protein))+ "\n"+protein+'\n'
+		protein += genetic_code[condons[x]]
+	content="    "+str(len(protein))+ "\n"+protein+'\n'
 		output.append(content)
 
 #set the new fasta file.
