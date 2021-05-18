@@ -23,3 +23,9 @@ For pie.py which was used to make a pie chart, I didn't display a frequency
 table to make a pie chart. Therefore, I set a dictionary of total case in
 countries and compute the frequency of each country to develop a frequency 
 table. Then, I make a pie chart according to the frequency table.
+
+gene.py:
+Gene.py is a file which was used to calculate the average exon length and 
+make a boxplot. I didn't calculate the average length for each gene and use
+total exon length to make a boxplot. So I complete my code to compute the 
+average length and use the average length to make a boxplot. 
