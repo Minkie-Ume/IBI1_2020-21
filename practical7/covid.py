@@ -38,7 +38,7 @@ np.median(covid_data.loc[new,"new_cases"])
 
 #create a boxplot of new cases
 world_new_cases= covid_data.loc[new,"new_cases"]#get the range of data
-plt.boxplot(score,
+plt.boxplot(world_new_cases,
              vert = True,
              whis = 1.5,
              patch_artist = True,
