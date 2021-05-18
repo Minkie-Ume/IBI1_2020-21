@@ -10,9 +10,16 @@ For variable.py, I didn't write how I compare the values of d and e. So I
 write three ways to compare d and e, then I get the result that d is bigger 
 then e.
 
-fibonacci.py
+fibonacci.py:
 For fibonacci.py, I only printed the 12th value. As the modification I use
  for loop command to print the first 13 value.
 
-r_rate.py
+r_rate.py:
 For r_rate.py, I didn't write pseudocode, so I rewrite the pseudocode.
+
+week6
+pie.py:
+For pie.py which was used to make a pie chart, I didn't display a frequency
+table to make a pie chart. Therefore, I set a dictionary of total case in
+countries and compute the frequency of each country to develop a frequency 
+table. Then, I make a pie chart according to the frequency table.
